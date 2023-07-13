@@ -1,13 +1,9 @@
-from django.shortcuts import render
-
-
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import redirect, render
 from django.urls import is_valid_path
 
-from .forms import AseguradoForm
-
-from .models import Asegurado
+from .forms import AseguradoForm, AseguradoraForm, PolizaForm
+from .models import Asegurado, Aseguradora, Poliza
 
 def home(request):
     asegurados_registros = Asegurado.objects.all()
@@ -21,14 +17,14 @@ def index(requiest):
 def crear_asegurado(request: HttpRequest) -> HttpResponse:
      
     if request.method == "POST":
-        form = AseguradoForm(request.POST)
-        if form.is_valid():
-            form.save()
+        form1 = AseguradoForm(request.POST)
+        if form1.is_valid():
+            form1.save()
             return redirect("asegurado:home")
     
     else:  # request.method == "GET"
-        form = AseguradoForm()
-        return render(request, "CORE/crear_aseguradora.html", {"form": form})
+        form1 = AseguradoForm()
+        return render(request, "CORE/crear.html", {"form": form1})
 
 
 
@@ -36,11 +32,11 @@ def crear_asegurado(request: HttpRequest) -> HttpResponse:
 def crear_aseguradora(request: HttpRequest) -> HttpResponse:
      
     if request.method == "POST":
-        form = AseguradoraForm(request.POST)
-        if form.is_valid():
-            form.save()
+        form2 = AseguradoraForm(request.POST)
+        if form2.is_valid():
+            form2.save()
             return redirect("asegurado:home")
     
     else:  # request.method == "GET"
-        form = AseguradoraForm()
-        return render(request, "CORE/crear_aseguradora.html", {"form": form})
+        form2 = AseguradoraForm()
+        return render(request, "CORE/crear_aseguradora.html", {"form": form2})
