@@ -1,6 +1,12 @@
 from django.urls import path
-from . import views
+from .views import crear_asegurado, home
+
+
+app_name = "asegurado"
 
 urlpatterns = [
-path('', views.index)
+    path("", home, name="home"),
+        path('crear/', crear_asegurado, name="crear"),
+   
+
 ]
