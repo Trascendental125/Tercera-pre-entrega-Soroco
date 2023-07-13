@@ -6,7 +6,7 @@ app_name = "asegurado"
 
 urlpatterns = [
     path("", home, name="home"),
-        path('crear/', crear_asegurado, name="crear"),
+    path('crear/', crear_asegurado, name="crear"),
    
 
 ]

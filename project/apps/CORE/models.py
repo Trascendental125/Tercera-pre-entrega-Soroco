@@ -11,7 +11,7 @@ class Asegurado(models.Model):
 
 class Aseguradora(models.Model):
     nombre = models.CharField(max_length=100)
-    país = models.CharField(max_length=100)
+    pais = models.CharField(max_length=100)
     # Otros campos necesarios para la aseguradora
 
     def __str__(self):
