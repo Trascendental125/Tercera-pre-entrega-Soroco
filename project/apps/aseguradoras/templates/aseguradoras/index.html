@@ -1,4 +1,4 @@
-{% extends 'Home/base.html' %}
+{% extends 'aseguradoras/base.html' %}
 
 {% block TITULO %} Aseguradoras {% endblock TITULO %}
 
@@ -10,7 +10,18 @@
         
     {% endfor %}
 
-    <a href="{% url 'Home:home' %}">Ir al menú principal</a>
+
+      <a href="{% url 'aseguradoras:crear_aseguradora' %}"> 
+        
+        <button>Crear Aseguradora</button>
+      </a>
+      
+      <a href="{% url 'Home:home' %}"> 
+        
+        <button>Menú Principal</button>
+      </a>
+      
+    
 
 {% endblock CONTENIDO %}
 

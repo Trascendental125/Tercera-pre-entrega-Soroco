@@ -1,8 +1,10 @@
-{% extends 'Home/base.html' %}
+{% extends 'polizas/base.html' %}
 
 {% block TITULO %} Polizas {% endblock TITULO %}
 
 {% block CONTENIDO %}
+
+
 
     {% for poliza in polizas %}
         <h2>{{poliza.asegurado}}</h2>

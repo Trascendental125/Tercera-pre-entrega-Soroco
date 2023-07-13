@@ -5,12 +5,17 @@ from django.urls import is_valid_path
 from .forms import AseguradoForm
 from .models import Asegurado
 
-def home(request):
-    asegurados_registros = Asegurado.objects.all()
-    return render(request, "CORE/index.html")
 
 def index(requiest):
     return render(requiest, "CORE/index.html")
+
+
+# Lista de asegurados
+def home(request):
+    asegurados_registros = Asegurado.objects.all()
+    return render(request, "CORE/index.html", {"asegurados": asegurados_registros})
+
+
 
 
 # Crear asegurados

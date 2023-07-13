@@ -5,12 +5,22 @@
 {% block CONTENIDO %}
 
     {% for asegurado in asegurados %}
-        <h2>{{ asegurado.nombre }}</h2>
+        <p>{{ asegurado.nombre }}</p>
         <p>{{ asegurado.cuit }}</p>
         
     {% endfor %}
 
-    <a href="{% url 'Home:home' %}">Ir al menú principal</a>
+    <a href="{% url 'asegurado:crear' %}"> 
+        
+        <button>Crear Asegurado</button>
+      </a>
+      
+      <a href="{% url 'Home:home' %}"> 
+        
+        <button>Menú Principal</button>
+      </a>
+      
+
 
 {% endblock CONTENIDO %}
 

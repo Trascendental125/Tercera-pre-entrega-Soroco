@@ -5,15 +5,11 @@ from django.urls import is_valid_path
 from CORE.forms import AseguradoraForm
 from CORE.models import Aseguradora
 
-def home(request):
-    aseguradoras_registros = Aseguradora.objects.all()
-    return render(request, "aseguradoras/index.html")
-
 def index(requiest):
     return render(requiest, "aseguradoras/index.html")
 
 
-# Crear asegurados
+# Crear aseguradora
 def crear_aseguradora(request: HttpRequest) -> HttpResponse:
      
     if request.method == "POST":
