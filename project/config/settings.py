@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'Home',
     'CORE',
     'aseguradoras',
+    'polizas',
     
 ]
 
