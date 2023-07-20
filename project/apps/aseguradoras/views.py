@@ -21,3 +21,6 @@ def crear_aseguradora(request: HttpRequest) -> HttpResponse:
     else:  # request.method == "GET"
         form = AseguradoraForm()
         return render(request, "aseguradoras/crear_aseguradora.html", {"form": form})
+
+def home(request):
+    return render(request, "Home/index.html")
